@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* font family */
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  /* width, radius, spacing */
+  --max-width: 1170px;
+  --fixed-width: 520px;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  /* box-shadow */
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  /* transition */
+  --transition: all 0.3s linear;
+
+  /* colors */
+  --clr-blue-primary: rgb(238, 252, 255);
+  --clr-blue-secondary: rgb(122, 193, 235);
+  --clr-blue-3: rgb(39, 49, 54);
+  --clr-blue-4: rgb(5, 93, 138);
+  --clr-red-primary: rgb(255, 87, 87);
+  --clr-red-secondary: rgb(167, 39, 39);
+  --clr-green-primary: rgb(89, 192, 89);
+  --clr-green-secondary: rgb(63, 184, 63);
+  --clr-grey-primary: rgb(241, 238, 238);
+  --clr-white-primary: white;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  background: var(--clr-blue-primary);
+  color: var(--clr-blue-3);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: transparent;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+
+/* !class and ID */
+
+.section-center {
+    display: grid;
+    align-content: center;
+    width: 95vw;
+    margin: 8rem auto;
+    max-width: var(--fixed-width);
+    padding: 3rem 2rem;
+
+    background: white;
+    transition: var(--transition);
+    box-shadow: var(--light-shadow);
+    letter-spacing: var(--spacing);
+}
+
+.section-center:hover {
+    box-shadow: var(--dark-shadow);
+}
+
+.grocery-form {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.grocery-form h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.grocery-form input {
+    height: 2rem;
+    padding: 0 1rem;
+    border: none;
+    background: var(--clr-grey-primary);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+.grocery-form button {
+    letter-spacing: var(--spacing);
+    height: 2rem;
+    padding: 0 1rem;
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+    background: var(--clr-blue-secondary);
+    transition: var(--transition);
+}
+
+.grocery-form button:hover {
+    background: var(--clr-blue-4);
+    color: var(--clr-white-primary);
+}
+
+.form-control {
+    display: flex;
+    justify-content: center;
+}
+
+#grocery {
+    flex: 1 0 auto;
+    width: 0;
+    min-width: 5rem;
+}
+
+/* grocery-container */
+
+.grocery-container {
+    text-align: center;
+    visibility: hidden;
+}
+
+.grocery-list {
+    margin-bottom: 2rem;
+}
+
+.grocery-item {
+    display: flex;
+    justify-content: space-between;
+    padding: .4rem 1rem;
+    transition: var(--transition);
+    border-radius: var(--radius);
+}
+
+.grocery-item:hover {
+    background: var(--clr-grey-primary);
+}
+
+.grocery-item button {
+    margin: 0 .3rem;
+}
+
+
+.edit-btn {
+    background: transparent;
+    color: var(--clr-green-primary);
+    transition: var(--transition);
+}
+
+.delete-btn {
+    background: transparent;
+    color: var(--clr-red-primary);
+    transition: var(--transition);
+}
+
+.edit-btn:hover {
+    color: var(--clr-green-secondary);
+}
+
+.delete-btn:hover {
+    color: var(--clr-red-secondary);
+}
+
+
+.clear-btn {
+    background: transparent;
+    color: var(--clr-red-primary);
+    letter-spacing: var(--spacing);
+    transition: var(--transition);
+}
+
+.clear-btn:hover {
+    color: var(--clr-red-secondary);
+}

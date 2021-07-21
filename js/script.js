@@ -72,7 +72,6 @@ function addItem(e) {
                       val.preventDefault();
                       console.log(item);
                       
-                      
                     })
                   // displayItem.remove();
                   // list.appendChild(displayItem);

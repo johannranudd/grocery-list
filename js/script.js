@@ -64,14 +64,34 @@ function addItem(e) {
         item.remove();
       }
       else if (e.target.className == "fas fa-edit") {
-        grocery.value = inputValue;
+        function inputValueFn() {
+          grocery.value = inputValue;
+          // console.log(e.target.parentNode.parentNode.parentNode);
+        }
+        inputValueFn();
       }
-      const current = e.target.parentNode.parentNode.parentNode;
+      // const current = e.target.parentNode.parentNode.parentNode;
       // console.log(current);
+      if (inputValueFn) {
+        form.addEventListener("submit", function() {
+          const newItem = document.createElement('div');
+          
+          item.remove();
+          newItem.innerHTML = `<article class="grocery-item">
+          <p class="title">${item}</p>
+          <div class="btn-container">
+              <button class="edit-btn">
+                  <i class="fas fa-edit"></i>
+              </button>
+              <button class="delete-btn">
+                  <i class="fas fa-trash"></i>
+              </button>
+          </div>
+      </article>`;
+        })
+      }
       
-      form.addEventListener("submit", function() {
-        displayItem.replaceWith(current);
-      })
+      
       
     });
   });

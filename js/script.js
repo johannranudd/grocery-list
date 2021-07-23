@@ -116,13 +116,21 @@ let editID = "";
 // *********** EVENT LISTENERS ***********
 // submit form
 form.addEventListener("submit", addItem);
+window.addEventListener('DOMContentLoaded', function() {
+})
 // *********** FUNCTIONS ***********
+
+
+// add Item
 function addItem(e) {
   e.preventDefault();
   const inputValue = grocery.value;
 
   if (inputValue && !editFlag){
-    console.log('add item');
+    // add item
+    const groceryItem = document.createElement('article');
+
+    
   } 
   else if (inputValue && editFlag) {
     console.log('edit item');
@@ -134,16 +142,14 @@ function addItem(e) {
 // display Alert
 function displayAlert(text, action) {
   alert.textContent = text;
-  alert.classList.add(`alert-${action}`)
+  alert.classList.add(`alert-${action}`);
 
   // remove alert
-  if (displayAlert) {
-    setInterval(function() {
+    setTimeout(function() {
       alert.textContent = '';
-      alert.classList.remove(`alert-${action}`)
-    }, 1000)
-  }
-  }
+      alert.classList.remove(`alert-${action}`);
+    }, 1000);
+}
   
 // *********** LOClAL STORAGE ***********
 

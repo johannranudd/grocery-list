@@ -129,8 +129,25 @@ function addItem(e) {
   if (inputValue && !editFlag){
     // add item
     const groceryItem = document.createElement('article');
-
-    
+    groceryItem.classList.add('grocery-item');
+    groceryItem.innerHTML = `<p class="title">${inputValue}</p>
+    <div class="btn-container">
+        <button class="edit-btn">
+            <i class="fas fa-edit"></i>
+        </button>
+        <button class="delete-btn">
+            <i class="fas fa-trash"></i>
+        </button>
+    </div>`;
+    list.appendChild(groceryItem);
+    const newItem = document.querySelectorAll('.grocery-item');
+    newItem.forEach(function(nItem) {
+      nItem.addEventListener("click", function(b) {
+        if (b.target.className === 'fas fa-trash') {
+          nItem.remove();
+        }
+      })
+    })
   } 
   else if (inputValue && editFlag) {
     console.log('edit item');

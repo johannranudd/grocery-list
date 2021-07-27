@@ -39,6 +39,10 @@ function addItem(e) {
             <i class="fas fa-trash"></i>
         </button>
     </div>`;
+    const deleteBtn = groceryItem.querySelector(".delete-btn");
+    const editBtn = groceryItem.querySelector(".edit-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
     // append child
     list.appendChild(groceryItem);
     // display alert
@@ -46,11 +50,9 @@ function addItem(e) {
     // set container to visible
     container.classList.add("show-container");
     // addToLocalStorage
-    addToLocalStorage();
+    addToLocalStorage(/*id, value*/);
     // setBackToDefault
     setBackToDefault();
-    // delete function
-    deleteFn();
   } else if (groceryValue && editFlag) {
     // edit
     console.log("edit item");
@@ -65,6 +67,7 @@ function displayAlert(text, action) {
   alert.textContent = text;
   alert.classList.add(`alert-${action}`);
 
+  // remove alert
   setTimeout(function () {
     alert.textContent = "";
     alert.classList.remove(`alert-${action}`);
@@ -73,32 +76,34 @@ function displayAlert(text, action) {
 
 // clear items
 function clearItems() {
-  const listItem = list.querySelectorAll("article");
-  listItem.forEach(function (item) {
+  const items = document.querySelectorAll(".grocery-item");
+  items.forEach(function (item) {
     item.remove();
-    setBackToDefault();
-    displayAlert("List cleared", "danger");
   });
+  displayAlert("Empty list", "danger");
+  // localStorage.removeItem('list');
+  setBackToDefault();
 }
 
 // delete function
-function deleteFn() {
-  const singleGroceryItem = list.querySelectorAll("article");
-  singleGroceryItem.forEach(function (g) {
-    g.addEventListener("click", function (deleteIcon) {
-      if (deleteIcon.target.className == "fas fa-trash") {
-        g.remove();
-        displayAlert("Item removed", "danger");
-        setBackToDefault();
-      }
-    });
-  });
+function deleteItem(e) {
+  const item = e.currentTarget.parentNode.parentNode;
+  item.remove();
 }
-
+// edit function
+function editItem(e) {
+  const title = document.querySelectorAll('.title');
+  title.forEach(function(f) {
+    // console.log(f.textContent);
+    return
+  })
+  // grocery.value = title.textContent;
+}
 // setBackToDefault
 function setBackToDefault() {
   grocery.value = "";
   editFlag = false;
+  editID = "";
   submitBtn.textContent = "Add";
   if (list.children.length <= 0) {
     container.classList.remove("show-container");
@@ -106,5 +111,7 @@ function setBackToDefault() {
 }
 
 // *********** LOClAL STORAGE ***********
-function addToLocalStorage() {}
+function addToLocalStorage(/*id, value*/) {
+  // console.log('added to local storage');
+}
 // *********** SETUP ITEMS ***********

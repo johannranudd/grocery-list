@@ -60,6 +60,7 @@ function addItem(e) {
     displayAlert("Value changed", "success");
     // edit local storage
     // editLocalStorage(editID, value);
+    editElement.parentElement.style.backgroundColor = 'white';
     setBackToDefault();
   } else {
     // empty
@@ -103,6 +104,7 @@ function deleteItem(e) {
 // edit function
 function editItem(e) {
   const item = e.currentTarget.parentElement.parentElement;
+  item.style.backgroundColor = '#ADD8E6';
   // set eit item
   editElement = e.currentTarget.parentElement.previousElementSibling;
   // set form value
@@ -271,3 +273,4 @@ console.log(oranges);
 
 // *********** SETUP ITEMS ***********
 // !end test
+

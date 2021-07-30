@@ -106,7 +106,6 @@ function setBackToDefault() {
 function addToLocalStorage(id, value) {
   const grocery = { id, value };
   let items = getLocalStorage();
-  // console.log(items);
   items.push(grocery);
   localStorage.setItem("list", JSON.stringify(items));
 }
@@ -315,3 +314,45 @@ function createListItem(dateId, groceryValue) {
 
 // *********** SETUP ITEMS ***********
 // !end test
+
+
+// const myValue = 'someValue';
+// const myId = new Date().getTime().toString();
+// // const myElement = document.createElement('div');
+// function localStuff(id, value) {
+//   const item = {id, value};
+//   localStorage.setItem('myKey', JSON.stringify(item));
+//   // return item;
+//   const get = JSON.parse(localStorage.getItem('myKey'));
+//   // console.log(get);
+//   return get;
+// }
+// console.log(localStuff(myId, myValue));
+// // console.log(myId);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const aString = 'something something';
+const aDate = new Date().getTime().toString();
+
+function aFunc(id, value) {
+  const aItem = {id, value};
+
+  localStorage.setItem('myObj', JSON.stringify(aItem));
+  
+  const aGet = JSON.parse(localStorage.getItem('myObj'));
+  return aGet;
+}
+
+console.log(aFunc(aDate, aString));

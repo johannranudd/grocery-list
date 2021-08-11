@@ -665,7 +665,7 @@
 
 // !end test (works)
 
-// !new test
+// !new test (works)
 const alert = document.querySelector(".alert");
 const form = document.querySelector(".grocery-form");
 const grocery = document.querySelector("#grocery");
@@ -828,4 +828,4 @@ function setupItems() {
 }
 
 
-// !end new test
+// !end new test (works)
